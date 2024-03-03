@@ -6,6 +6,10 @@ export default {
       backgroundImage: {
         "home-desktop": "url('../src/assets/home/background-home-desktop.jpg')",
       },
+      fontFamily: {
+        barlow_condensed: ["Barlow Condensed"],
+        bellefair: ["Bellefair"],
+      },
     },
   },
   plugins: [],
