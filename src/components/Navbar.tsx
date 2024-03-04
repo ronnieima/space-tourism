@@ -16,7 +16,7 @@ export default function Navbar() {
   const parentRoute = `/${path.slice(1).split("/")[0]}` || "/";
 
   return (
-    <nav className="absolute h-16 w-full text-white lg:top-8 lg:h-24">
+    <nav className="absolute z-50 h-16 w-full text-white lg:top-8 lg:h-24">
       <div className="flex h-full items-center justify-between px-8 md:px-0 md:pl-8">
         <img
           src="/src/assets/shared/logo.svg"

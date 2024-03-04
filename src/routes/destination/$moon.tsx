@@ -16,16 +16,17 @@ function DestinationMoon() {
 
   const currentMoon = getMoon(moon);
   return (
-    <main className="h-screen bg-destination-desktop bg-cover bg-center text-white">
-      <section className="flex h-full w-full items-center justify-between gap-32 px-32 pt-12">
-        <div className="flex w-1/2  flex-col gap-16">
+    <main className=" bright h-screen bg-destination-desktop bg-cover bg-center  text-white">
+      <section className="mx-auto  flex h-full w-full max-w-[80rem] items-center justify-between gap-32 px-16 pt-12">
+        <div className=" flex  w-1/2 flex-col gap-16">
           <h5 className="uppercase ">
             <span className="font-bold text-slate-600">01 </span>Pick your
             destination
           </h5>
-          <div className="self-end">
+          <div className="mt-16 self-center">
             <img
               src={currentMoon?.imageUrl}
+              className=""
               alt={`A picture of the ${currentMoon.name.toLowerCase()}.`}
             ></img>
           </div>

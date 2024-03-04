@@ -17,7 +17,7 @@ function Index() {
     >
       <section
         className={classNames(
-          "flex h-full flex-col items-center justify-center gap-12 py-16  font-bellefair",
+          "mx-auto flex h-full  flex-col items-center justify-center gap-12 py-16  font-bellefair",
           "lg:flex-row lg:items-end lg:justify-between lg:px-32 lg:pb-32 ",
         )}
       >
