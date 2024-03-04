@@ -8,7 +8,10 @@ export default {
         primary: "#D0D6F9",
       },
       backgroundImage: {
+        "home-mobile": "url('../src/assets/home/background-home-mobile.jpg')",
+        "home-tablet": "url('../src/assets/home/background-home-tablet.jpg')",
         "home-desktop": "url('../src/assets/home/background-home-desktop.jpg')",
+
         "destination-desktop":
           "url('../src/assets/destination/background-destination-desktop.jpg')",
       },

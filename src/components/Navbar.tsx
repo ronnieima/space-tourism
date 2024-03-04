@@ -1,5 +1,6 @@
-import { useRouterState, Link } from "@tanstack/react-router";
+import { useRouterState, Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
+import { Menu } from "lucide-react";
 
 const links = [
   { label: "home", href: "/" },
@@ -10,21 +11,21 @@ const links = [
 
 export default function Navbar() {
   const { location } = useRouterState();
+  const navigate = useNavigate();
   const path = location.pathname;
   const parentRoute = `/${path.slice(1).split("/")[0]}` || "/";
 
   return (
-    <nav className="absolute top-8 h-24 w-full text-white">
-      <div className="flex h-full items-center justify-between">
-        <div className="relative  h-16   bg-transparent px-8">
-          <img
-            src="/src/assets/shared/logo.svg"
-            className="absolute h-full w-full"
-          />
-        </div>
-        <div className="z-50 ml-16 h-[2px] w-full translate-x-6 bg-white/20"></div>
-
-        <ul className="flex h-full list-none items-center	gap-16 pl-24 pr-96  backdrop-blur-lg">
+    <nav className="absolute h-16 w-full text-white lg:top-8 lg:h-24">
+      <div className="flex h-full items-center justify-between px-8 md:px-0 md:pl-8">
+        <img
+          src="/src/assets/shared/logo.svg"
+          className="w-[40px] hover:cursor-pointer"
+          onClick={() => navigate({ to: "/" })}
+        />
+        <Menu size={32} className="text-primary md:hidden" />
+        <div className="z-50 ml-16 hidden h-[2px] w-full translate-x-6 bg-white/20 lg:flex"></div>
+        <ul className="hidden h-full list-none items-center	gap-16 bg-white/10 md:flex md:pl-16 md:pr-8 lg:pl-24 lg:pr-72 lg:backdrop-blur-lg">
           {links.map((link, i) => {
             const isActive = parentRoute === link.href;
             return (
@@ -42,7 +43,7 @@ export default function Navbar() {
                   to={link.href}
                   className="flex h-full items-center gap-2 font-barlow_condensed text-[16px] uppercase tracking-[2.7px]"
                 >
-                  <span className="font-bold">
+                  <span className="hidden font-bold lg:block">
                     {i.toString().padStart(2, "0")}
                   </span>
                   <span>{link.label}</span>

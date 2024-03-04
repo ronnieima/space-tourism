@@ -1,34 +1,52 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import classNames from "classnames";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 function Index() {
+  const navigate = useNavigate();
   return (
-    <main className="-z-50 h-screen bg-home-desktop bg-cover bg-center bg-no-repeat py-8 text-white">
-      <section className="flex h-full items-end justify-between px-32 pb-32 font-bellefair">
-        <header className="w-[64rem]">
-          <h5 className="font-barlow_condensed text-[28px] tracking-[4.75px] text-[#D0D6F9]">
-            SO, YOU WANT TO TRAVEL TO <br />
-          </h5>
-          <h1 className="text-[150px] ">SPACE</h1>
-          <p className="pr-[32rem] font-barlow_condensed text-[18px] leading-8 text-[#D0D6F9]">
-            Let’s face it; if you want to go to space, you might as well
+    <main
+      className={classNames(
+        "bg-home-mobile -z-50 h-screen bg-cover bg-center bg-no-repeat ",
+        "md:bg-home-tablet",
+        "lg:bg-home-desktop",
+      )}
+    >
+      <section
+        className={classNames(
+          "flex h-full flex-col items-center justify-center gap-12 py-16  font-bellefair",
+          "lg:flex-row lg:items-end lg:justify-between lg:px-32 lg:pb-32 ",
+        )}
+      >
+        <header className="flex w-full flex-col items-center justify-center px-4 text-center lg:w-[32rem] lg:items-start lg:text-left">
+          <h5 className="text-sm uppercase ">So, you want to travel to</h5>
+          <h1 className="text-[80px] md:text-[150px]">SPACE</h1>
+          <p className="w-full px-4 leading-8 text-[#D0D6F9] sm:px-24 md:px-32 lg:p-0">
+            Let&apos;s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we’ll give you a truly out of this
-            world experience!
+            Well sit back, and relax because we&apos;ll give you a truly out of
+            this world experience!
           </p>
         </header>
-        <div className="relative rounded-full ">
-          <Link
-            to="/destination/$moon"
-            params={{ moon: "moon" }}
-            className="peer z-20 h-64 w-64 rounded-full bg-white text-[32px] uppercase text-black"
+        <div className="relative">
+          <button
+            onClick={() => navigate({ to: "/destination" })}
+            className={classNames(
+              "peer relative z-20 h-40 w-40 rounded-full bg-white text-[32px] text-lg uppercase text-black",
+              "sm:h-64 sm:w-64 sm:text-4xl",
+            )}
           >
             Explore
-          </Link>
-          <div className="absolute left-1/2 top-1/2 z-10 mx-auto h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 opacity-0 transition-all duration-200 peer-hover:opacity-100"></div>
+          </button>
+          <div
+            className={classNames(
+              "absolute left-1/2 top-1/2 z-10 mx-auto h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 opacity-0 transition-all duration-200 peer-hover:opacity-100",
+              "xl:h-96 xl:w-96",
+            )}
+          />
         </div>
       </section>
     </main>

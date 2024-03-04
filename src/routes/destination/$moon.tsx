@@ -16,10 +16,10 @@ function DestinationMoon() {
 
   const currentMoon = getMoon(moon);
   return (
-    <main className="h-screen  bg-destination-desktop bg-cover bg-center text-white">
+    <main className="h-screen bg-destination-desktop bg-cover bg-center text-white">
       <section className="flex h-full w-full items-center justify-between gap-32 px-32 pt-12">
         <div className="flex w-1/2  flex-col gap-16">
-          <h5 className="uppercase text-white">
+          <h5 className="uppercase ">
             <span className="font-bold text-slate-600">01 </span>Pick your
             destination
           </h5>
@@ -30,6 +30,7 @@ function DestinationMoon() {
             ></img>
           </div>
         </div>
+
         <div className="flex w-1/2 flex-col gap-8">
           <ul className={classNames("flex gap-8")}>
             {moons.map((moon) => {
