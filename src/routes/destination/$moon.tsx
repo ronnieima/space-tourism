@@ -5,6 +5,9 @@ import { getMoon } from "../../utils/utils";
 import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/destination/$moon")({
+  loader: ({ location: { href } }) => {
+    console.log(href);
+  },
   component: DestinationMoon,
 });
 
@@ -30,21 +33,18 @@ function DestinationMoon() {
         <div className="flex w-1/2 flex-col gap-8">
           <ul className={classNames("flex gap-8")}>
             {moons.map((moon) => {
-              const isActive =
-                currentMoon.name.toLowerCase() === moon.name.toLowerCase();
               return (
                 <li>
                   <Link
                     to={"/destination/$moon"}
                     params={{ moon: moon.name.toLowerCase() }}
                     key={moon.name}
+                    activeProps={{
+                      className: "border-b-4 border-white text-white",
+                    }}
                     className={classNames(
-                      "text-nav",
+                      "text-nav text-primary",
                       "hover:border-b-4 hover:border-white/50",
-                      {
-                        "border-b-4 border-white text-white": isActive,
-                        "text-primary": !isActive,
-                      },
                     )}
                   >
                     {moon.name.toUpperCase()}

@@ -12,7 +12,6 @@ export default function Navbar() {
   const { location } = useRouterState();
   const path = location.pathname;
   const parentRoute = `/${path.slice(1).split("/")[0]}` || "/";
-  console.log({ parentRoute });
 
   return (
     <nav className="absolute top-8 h-24 w-full text-white">

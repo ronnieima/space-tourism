@@ -1,9 +1,5 @@
-import { Navigate, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/destination/")({
-  component: Destination,
+  loader: ({ navigate }) => navigate({ to: "$moon", params: { moon: "moon" } }),
 });
-
-function Destination() {
-  return <Navigate to="/destination/$moon" params={{ moon: "moon" }} />;
-}
