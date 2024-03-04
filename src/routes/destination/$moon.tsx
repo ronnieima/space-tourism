@@ -15,29 +15,37 @@ function DestinationMoon() {
   return (
     <main className="h-screen  bg-destination-desktop bg-cover bg-center text-white">
       <section className="flex h-full w-full items-center justify-between gap-32 px-32 pt-12">
-        <div className="gpa-4 flex w-1/2  flex-col gap-16">
+        <div className="flex w-1/2  flex-col gap-16">
           <h5 className="uppercase text-white">
             <span className="font-bold text-slate-600">01 </span>Pick your
             destination
           </h5>
-          <div>
+          <div className="self-end">
             <img
               src={currentMoon?.imageUrl}
               alt={`A picture of the ${currentMoon.name.toLowerCase()}.`}
-              className=""
             ></img>
           </div>
         </div>
-        <div className="w-1/2">
-          <ul className={classNames("flex gap-4")}>
+        <div className="flex w-1/2 flex-col gap-8">
+          <ul className={classNames("flex gap-8")}>
             {moons.map((moon) => {
+              const isActive =
+                currentMoon.name.toLowerCase() === moon.name.toLowerCase();
               return (
                 <li>
                   <Link
                     to={"/destination/$moon"}
                     params={{ moon: moon.name.toLowerCase() }}
                     key={moon.name}
-                    className="text-nav"
+                    className={classNames(
+                      "text-nav",
+                      "hover:border-b-4 hover:border-white/50",
+                      {
+                        "border-b-4 border-white text-white": isActive,
+                        "text-primary": !isActive,
+                      },
+                    )}
                   >
                     {moon.name.toUpperCase()}
                   </Link>
@@ -45,10 +53,14 @@ function DestinationMoon() {
               );
             })}
           </ul>
-          <h1 className="uppercase">{currentMoon.name}</h1>
-          <p className="">{currentMoon.description}</p>
+          <div className="space-y-2">
+            <h2 className="uppercase">{currentMoon.name}</h2>
+            <p className="pr-8 leading-10 text-primary">
+              {currentMoon.description}
+            </p>
+          </div>
           <div className="h-[1px] w-full bg-white/30"></div>
-          <div className="flex gap-16">
+          <div className="flex gap-16 uppercase">
             <div>
               <p>AVG. DISTANCE</p>
               <h4>{currentMoon.averageDistance}</h4>

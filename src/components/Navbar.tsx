@@ -1,4 +1,4 @@
-import { useRouterState } from "@tanstack/react-router";
+import { useRouterState, Link } from "@tanstack/react-router";
 import classNames from "classnames";
 
 const links = [
@@ -39,15 +39,15 @@ export default function Navbar() {
                   },
                 )}
               >
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="flex h-full items-center gap-2 font-barlow_condensed text-[16px] uppercase tracking-[2.7px]"
                 >
                   <span className="font-bold">
                     {i.toString().padStart(2, "0")}
                   </span>
                   <span>{link.label}</span>
-                </a>
+                </Link>
               </li>
             );
           })}

@@ -16,7 +16,7 @@
     @apply font-bellefair text-[32px] text-white;
   }
   h5 {
-    @apply font-barlow_condensed text-primary text-[28px] tracking-[4.75px];
+    @apply font-barlow_condensed text-[28px] tracking-[4.75px] text-primary;
   }
   p {
     @apply font-barlow_condensed text-[18px];
@@ -31,6 +31,6 @@
     @apply font-barlow_condensed text-[14px] tracking-[2.35px];
   }
   .text-nav {
-    @apply text-[16px] tracking-[2.7px];
+    @apply font-barlow_condensed text-[16px] tracking-[2.7px];
   }
 }

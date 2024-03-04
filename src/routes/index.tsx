@@ -20,7 +20,7 @@ function Index() {
             world experience!
           </p>
         </header>
-        <div className="relative rounded-full">
+        <div className="relative rounded-full ">
           <Link
             to="/destination/$moon"
             params={{ moon: "moon" }}
