@@ -13,7 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as DestinationIndexImport } from './routes/destination/index'
+import { Route as CrewIndexImport } from './routes/crew/index'
 import { Route as DestinationMoonImport } from './routes/destination/$moon'
+import { Route as CrewCrewMemberImport } from './routes/crew/$crewMember'
 
 // Create/Update Routes
 
@@ -27,8 +29,18 @@ const DestinationIndexRoute = DestinationIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CrewIndexRoute = CrewIndexImport.update({
+  path: '/crew/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DestinationMoonRoute = DestinationMoonImport.update({
   path: '/destination/$moon',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CrewCrewMemberRoute = CrewCrewMemberImport.update({
+  path: '/crew/$crewMember',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -40,8 +52,16 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/crew/$crewMember': {
+      preLoaderRoute: typeof CrewCrewMemberImport
+      parentRoute: typeof rootRoute
+    }
     '/destination/$moon': {
       preLoaderRoute: typeof DestinationMoonImport
+      parentRoute: typeof rootRoute
+    }
+    '/crew/': {
+      preLoaderRoute: typeof CrewIndexImport
       parentRoute: typeof rootRoute
     }
     '/destination/': {
@@ -55,7 +75,9 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
+  CrewCrewMemberRoute,
   DestinationMoonRoute,
+  CrewIndexRoute,
   DestinationIndexRoute,
 ])
 

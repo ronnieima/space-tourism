@@ -32,3 +32,12 @@ export const moons = [
     imageUrl: "/src/assets/destination/image-titan.webp",
   },
 ];
+
+export const crewMembers = [
+  {
+    jobTitle: "Commander",
+    name: "Douglas Hurley",
+    bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
+    imageUrl: "",
+  },
+];
