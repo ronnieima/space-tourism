@@ -11,6 +11,9 @@ const links = [
 export default function Navbar() {
   const { location } = useRouterState();
   const path = location.pathname;
+  const parentRoute = `/${path.slice(1).split("/")[0]}` || "/";
+  console.log({ parentRoute });
+
   return (
     <nav className="absolute top-8 h-24 w-full text-white">
       <div className="flex h-full items-center justify-between">
@@ -24,7 +27,7 @@ export default function Navbar() {
 
         <ul className="flex h-full list-none items-center	gap-16 pl-24 pr-96  backdrop-blur-lg">
           {links.map((link, i) => {
-            const isActive = path === link.href;
+            const isActive = parentRoute === link.href;
             return (
               <li
                 key={link.label}
@@ -38,7 +41,7 @@ export default function Navbar() {
               >
                 <a
                   href={link.href}
-                  className="font-barlow_condensed flex h-full items-center gap-2 text-[16px] uppercase tracking-[2.7px]"
+                  className="flex h-full items-center gap-2 font-barlow_condensed text-[16px] uppercase tracking-[2.7px]"
                 >
                   <span className="font-bold">
                     {i.toString().padStart(2, "0")}
