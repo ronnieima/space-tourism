@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { cn } from "@/utils/utils";
 import { PropsWithChildren } from "react";
 
 interface MaxWidthContainerProps extends PropsWithChildren {
@@ -11,8 +11,8 @@ export default function MaxWidthContainer({
 }: MaxWidthContainerProps) {
   return (
     <section
-      className={classNames(
-        "mx-auto flex h-full w-full max-w-[80rem] flex-col items-center justify-between gap-8 px-4 pt-24 lg:flex-row lg:gap-32 lg:px-16 lg:pt-32",
+      className={cn(
+        "mx-auto flex h-screen w-full max-w-[80rem] flex-col items-center justify-center gap-8 px-4 pt-24 lg:flex-row lg:gap-32 lg:px-16 lg:pt-32",
         className,
       )}
     >

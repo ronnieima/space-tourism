@@ -17,12 +17,12 @@ function DestinationMoon() {
   return (
     <main
       className={classNames(
-        "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat py-2 text-white",
+        "-z-50 bg-destination-mobile bg-cover bg-center bg-no-repeat  text-white",
         "md:bg-destination-tablet",
-        "lg:h-screen lg:bg-destination-desktop",
+        " lg:bg-destination-desktop",
       )}
     >
-      <MaxWidthContainer>
+      <MaxWidthContainer className="justify-center gap-16">
         <div className=" flex flex-col items-center lg:w-1/2 lg:gap-16">
           <h5 className=" text-center uppercase sm:text-left ">
             <span className={classNames("font-bold text-slate-600")}>01 </span>
@@ -50,7 +50,7 @@ function DestinationMoon() {
                       className: "border-b-4 border-white text-white",
                     }}
                     className={classNames(
-                      "text-nav text-primary",
+                      "text-nav font-barlow_condensed text-primary",
                       "hover:border-b-4 hover:border-white/50",
                     )}
                   >
@@ -61,7 +61,7 @@ function DestinationMoon() {
             })}
           </ul>
           <div className="space-y-2 text-center lg:text-left">
-            <h2 className="uppercase">{moon.name}</h2>
+            <h2 className="text- uppercase">{moon.name}</h2>
             <p className="leading-10 text-primary lg:pr-8">
               {moon.description}
             </p>

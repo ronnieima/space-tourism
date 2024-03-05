@@ -1,17 +1,25 @@
 import { crewMembers, moons } from "@/config/content";
+import { notFound } from "@tanstack/react-router";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function getMoon(moonName: string) {
-  return moons.find(
+  const moon = moons.find(
     (moon) => moon.name.toLowerCase() === moonName.toLowerCase(),
   );
+  if (!moon) throw notFound();
+
+  return moon;
 }
 
 export function getCrewMember(crewName: string) {
-  return crewMembers.find(
+  const crewMember = crewMembers.find(
     (crew) => convertStringToKebabCase(crew.name) === crewName,
   );
+
+  if (!crewMember) throw notFound();
+
+  return crewMember;
 }
 
 export function convertStringToKebabCase(str: string) {
