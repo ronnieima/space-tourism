@@ -1,3 +1,10 @@
+export const links = [
+  { label: "home", href: "/" },
+  { label: "destination", href: "/destination" },
+  { label: "crew", href: "/crew" },
+  { label: "technology", href: "/technology" },
+];
+
 export const moons = [
   {
     name: "moon",

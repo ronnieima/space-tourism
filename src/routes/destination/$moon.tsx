@@ -17,64 +17,70 @@ function DestinationMoon() {
   return (
     <main
       className={classNames(
-        "-z-50 bg-destination-mobile bg-cover bg-center bg-no-repeat  text-white",
+        "bg-destination-mobile bg-cover bg-center bg-no-repeat text-white ",
         "md:bg-destination-tablet",
         " lg:bg-destination-desktop",
       )}
     >
-      <MaxWidthContainer className="justify-center gap-16">
-        <div className=" flex flex-col items-center lg:w-1/2 lg:gap-16">
-          <h5 className=" text-center uppercase sm:text-left ">
-            <span className={classNames("font-bold text-slate-600")}>01 </span>
-            Pick your destination
-          </h5>
-          <div className="mt-16 h-64 w-64 self-center lg:h-80 lg:w-80">
-            <img
-              src={moon?.imageUrl}
-              className=""
-              alt={`A picture of the ${moon.name.toLowerCase()}.`}
-            ></img>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center gap-8 lg:w-1/2 lg:items-start">
-          <ul className={classNames("flex gap-8")}>
-            {moons.map((moon) => {
-              return (
-                <li key={moon.name}>
-                  <Link
-                    to={"/destination/$moon"}
-                    params={{ moon: moon.name.toLowerCase() }}
-                    key={moon.name}
-                    activeProps={{
-                      className: "border-b-4 border-white text-white",
-                    }}
-                    className={classNames(
-                      "text-nav font-barlow_condensed text-primary",
-                      "hover:border-b-4 hover:border-white/50",
-                    )}
-                  >
-                    {moon.name.toUpperCase()}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="space-y-2 text-center lg:text-left">
-            <h2 className="text- uppercase">{moon.name}</h2>
-            <p className="leading-10 text-primary lg:pr-8">
-              {moon.description}
-            </p>
-          </div>
-          <div className="h-[1px] w-full bg-white/20"></div>
-          <div className="flex flex-col items-center gap-16 py-8 text-center uppercase lg:flex-row">
-            <div>
-              <p>AVG. DISTANCE</p>
-              <h4>{moon.averageDistance}</h4>
+      <MaxWidthContainer className="flex flex-col justify-center gap-16 lg:px-0">
+        <h5 className="text-center uppercase text-white md:self-start md:px-8 md:text-left lg:px-0">
+          <span className={classNames("font-bold text-slate-600")}>01 </span>
+          Pick your destination
+        </h5>
+        <div className="flex flex-col gap-16 lg:flex-row">
+          <div className=" flex w-full flex-col items-center lg:w-1/2 lg:gap-16">
+            <div className="h-64 w-64   lg:h-auto lg:w-[445px]">
+              <img
+                src={moon?.imageUrl}
+                className="h-full w-full"
+                alt={`A picture of the ${moon.name.toLowerCase()}.`}
+              ></img>
             </div>
-            <div>
-              <p>EST. TRAVEL TIME</p>
-              <h4>{moon.estimatedTravelTime}</h4>
+          </div>
+
+          <div className="flex flex-col items-center gap-8 lg:w-1/2 lg:items-start lg:pr-32">
+            <ul className={classNames("flex gap-8")}>
+              {moons.map((moon) => {
+                return (
+                  <li key={moon.name}>
+                    <Link
+                      to={"/destination/$moon"}
+                      params={{ moon: moon.name.toLowerCase() }}
+                      key={moon.name}
+                      activeProps={{
+                        className: "border-b-4 border-white text-white",
+                      }}
+                      className={classNames(
+                        "text-nav font-barlow_condensed text-primary",
+                        "hover:border-b-4 hover:border-white/50",
+                      )}
+                    >
+                      {moon.name.toUpperCase()}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="space-y-8 px-8 text-center md:px-24 lg:items-start lg:px-0 lg:text-left">
+              <h2 className="text-[56px] uppercase md:text-[80px] lg:text-[100px]">
+                {moon.name}
+              </h2>
+              <p className="leading-10 text-primary lg:pr-8">
+                {moon.description}
+              </p>
+              <div className="h-[1px] w-full bg-white/20"></div>
+            </div>
+            <div className="flex flex-col items-center gap-16  py-8 text-center uppercase md:flex-row md:gap-32 lg:text-left">
+              <div>
+                <p className="text-subheading-2 text-primary">AVG. DISTANCE</p>
+                <h4>{moon.averageDistance}</h4>
+              </div>
+              <div>
+                <p className="text-subheading-2 text-primary">
+                  EST. TRAVEL TIME
+                </p>
+                <h4>{moon.estimatedTravelTime}</h4>
+              </div>
             </div>
           </div>
         </div>

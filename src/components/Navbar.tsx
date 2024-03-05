@@ -1,13 +1,7 @@
 import { useRouterState, Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import MobileNav from "./MobileNav";
-
-const links = [
-  { label: "home", href: "/" },
-  { label: "destination", href: "/destination" },
-  { label: "crew", href: "/crew" },
-  { label: "technology", href: "/technology" },
-];
+import { links } from "@/config/content";
 
 export default function Navbar() {
   const { location } = useRouterState();

@@ -1,12 +1,6 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import NavLinks from "./NavLinks";
 
 export default function MobileNav() {
   return (
@@ -14,14 +8,8 @@ export default function MobileNav() {
       <SheetTrigger className="md:hidden">
         <Menu size={32} />
       </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
-        </SheetHeader>
+      <SheetContent className="bg-transparent pr-0 backdrop-blur-2xl">
+        <NavLinks inMobileNav className="flex flex-col gap-8 pl-8 pt-32" />
       </SheetContent>
     </Sheet>
   );
