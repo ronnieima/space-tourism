@@ -22,9 +22,11 @@ function DestinationMoon() {
           </h5>
 
           <div className="">
-            <h3 className="uppercase">{crewMember.jobTitle}</h3>
-            <h1 className="pr-8  leading-10 text-primary">{crewMember.name}</h1>
-            <p>{crewMember.bio}</p>
+            <h3 className="uppercase">{crewMember?.jobTitle}</h3>
+            <h1 className="pr-8  leading-10 text-primary">
+              {crewMember?.name}
+            </h1>
+            <p>{crewMember?.bio}</p>
           </div>
           <ul className="flex list-none gap-16 uppercase">
             {crewMembers.map((crew) => (
