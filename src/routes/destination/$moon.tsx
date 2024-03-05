@@ -3,40 +3,45 @@ import classNames from "classnames";
 import { moons } from "../../config/content";
 import { getMoon } from "../../utils/utils";
 import { Link } from "@tanstack/react-router";
+import MaxWidthContainer from "../../components/MaxWidthContainer";
 
 export const Route = createFileRoute("/destination/$moon")({
-  loader: ({ location: { href } }) => {
-    console.log(href);
+  loader: ({ params: { moon } }) => {
+    return getMoon(moon);
   },
   component: DestinationMoon,
 });
 
 function DestinationMoon() {
-  const { moon } = Route.useParams();
-
-  const currentMoon = getMoon(moon);
+  const moon = Route.useLoaderData();
   return (
-    <main className=" bright h-screen bg-destination-desktop bg-cover bg-center  text-white">
-      <section className="mx-auto  flex h-full w-full max-w-[80rem] items-center justify-between gap-32 px-16 pt-12">
-        <div className=" flex  w-1/2 flex-col gap-16">
-          <h5 className="uppercase ">
-            <span className="font-bold text-slate-600">01 </span>Pick your
-            destination
+    <main
+      className={classNames(
+        "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat py-2 text-white",
+        "md:bg-destination-tablet",
+        "lg:h-screen lg:bg-destination-desktop",
+      )}
+    >
+      <MaxWidthContainer>
+        <div className=" flex flex-col items-center lg:w-1/2 lg:gap-16">
+          <h5 className=" text-center uppercase sm:text-left ">
+            <span className={classNames("font-bold text-slate-600")}>01 </span>
+            Pick your destination
           </h5>
-          <div className="mt-16 self-center">
+          <div className="mt-16 h-64 w-64 self-center lg:h-80 lg:w-80">
             <img
-              src={currentMoon?.imageUrl}
+              src={moon?.imageUrl}
               className=""
-              alt={`A picture of the ${currentMoon.name.toLowerCase()}.`}
+              alt={`A picture of the ${moon.name.toLowerCase()}.`}
             ></img>
           </div>
         </div>
 
-        <div className="flex w-1/2 flex-col gap-8">
+        <div className="flex flex-col items-center gap-8 lg:w-1/2 lg:items-start">
           <ul className={classNames("flex gap-8")}>
             {moons.map((moon) => {
               return (
-                <li>
+                <li key={moon.name}>
                   <Link
                     to={"/destination/$moon"}
                     params={{ moon: moon.name.toLowerCase() }}
@@ -55,25 +60,25 @@ function DestinationMoon() {
               );
             })}
           </ul>
-          <div className="space-y-2">
-            <h2 className="uppercase">{currentMoon.name}</h2>
-            <p className="pr-8 leading-10 text-primary">
-              {currentMoon.description}
+          <div className="space-y-2 text-center lg:text-left">
+            <h2 className="uppercase">{moon.name}</h2>
+            <p className="leading-10 text-primary lg:pr-8">
+              {moon.description}
             </p>
           </div>
-          <div className="h-[1px] w-full bg-white/30"></div>
-          <div className="flex gap-16 uppercase">
+          <div className="h-[1px] w-full bg-white/20"></div>
+          <div className="flex flex-col items-center gap-16 py-8 text-center uppercase lg:flex-row">
             <div>
               <p>AVG. DISTANCE</p>
-              <h4>{currentMoon.averageDistance}</h4>
+              <h4>{moon.averageDistance}</h4>
             </div>
             <div>
               <p>EST. TRAVEL TIME</p>
-              <h4>{currentMoon.estimatedTravelTime}</h4>
+              <h4>{moon.estimatedTravelTime}</h4>
             </div>
           </div>
         </div>
-      </section>
+      </MaxWidthContainer>
     </main>
   );
 }

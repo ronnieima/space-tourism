@@ -1,6 +1,6 @@
 import { useRouterState, Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
-import { Menu } from "lucide-react";
+import MobileNav from "./MobileNav";
 
 const links = [
   { label: "home", href: "/" },
@@ -23,7 +23,8 @@ export default function Navbar() {
           className="w-[40px] hover:cursor-pointer"
           onClick={() => navigate({ to: "/" })}
         />
-        <Menu size={32} className="text-primary md:hidden" />
+        <MobileNav />
+
         <div className="z-50 ml-16 hidden h-[2px] w-full translate-x-6 bg-white/20 lg:flex"></div>
         <ul className="hidden h-full list-none items-center	gap-16 bg-white/10 md:flex md:pl-16 md:pr-8 lg:pl-24 lg:pr-72 lg:backdrop-blur-lg">
           {links.map((link, i) => {

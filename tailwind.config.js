@@ -1,7 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         dark: "#0B0D17",
@@ -12,6 +26,10 @@ export default {
         "home-tablet": "url('../src/assets/home/background-home-tablet.jpg')",
         "home-desktop": "url('../src/assets/home/background-home-desktop.jpg')",
 
+        "destination-mobile":
+          "url('../src/assets/destination/background-destination-mobile.jpg')",
+        "destination-tablet":
+          "url('../src/assets/destination/background-destination-tablet.jpg')",
         "destination-desktop":
           "url('../src/assets/destination/background-destination-desktop.jpg')",
       },
@@ -20,7 +38,21 @@ export default {
         barlow_condensed: ["Barlow Condensed"],
         bellefair: ["Bellefair"],
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [],
+  plugins: ["tailwindcss-animate"],
 };

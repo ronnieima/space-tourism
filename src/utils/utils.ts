@@ -1,8 +1,6 @@
-import { notFound } from "@tanstack/react-router";
-import { moons } from "../config/content";
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export function getMoon(moonName: string) {
-  const moon = moons.find((moon) => moon.name.toLowerCase() === moonName);
-  if (!moon) throw notFound();
-  return moon;
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }

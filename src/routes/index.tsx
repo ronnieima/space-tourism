@@ -10,7 +10,7 @@ function Index() {
   return (
     <main
       className={classNames(
-        "bg-home-mobile -z-50 h-screen bg-cover bg-center bg-no-repeat ",
+        "-z-50 h-screen bg-home-mobile bg-cover bg-center bg-no-repeat ",
         "md:bg-home-tablet",
         "lg:bg-home-desktop",
       )}
