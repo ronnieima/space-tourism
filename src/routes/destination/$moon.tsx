@@ -17,13 +17,13 @@ function DestinationMoon() {
   return (
     <main
       className={classNames(
-        "h-screen bg-destination-mobile bg-cover bg-center bg-no-repeat text-white ",
+        "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat text-white ",
         "md:bg-destination-tablet",
-        " lg:bg-destination-desktop",
+        " lg:h-screen lg:bg-destination-desktop",
       )}
     >
       <MaxWidthContainer className="flex-col justify-center gap-16 lg:px-0">
-        <h5 className="text-center text-[16px] uppercase text-white md:self-start md:px-8 md:text-left lg:px-0">
+        <h5 className="text-center text-[16px] uppercase text-white md:self-start md:px-8 md:text-left">
           <span className={classNames("font-bold text-slate-600")}>01 </span>
           Pick your destination
         </h5>

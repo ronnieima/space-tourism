@@ -83,7 +83,7 @@
     @apply font-barlow_condensed text-[16px] tracking-[4.75px] text-primary sm:text-[20px] lg:text-[28px];
   }
   p {
-    @apply font-barlow_condensed text-[18px];
+    @apply font-barlow_condensed text-[15px] leading-[25px] text-primary;
   }
 }
 
@@ -92,7 +92,7 @@
     @apply font-bellefair text-[28px];
   }
   .text-subheading-2 {
-    @apply font-barlow_condensed text-[14px] tracking-[2.35px];
+    @apply font-barlow_condensed text-[14px] tracking-[2.35px] text-primary;
   }
   .text-nav {
     @apply text-[16px] tracking-[2.7px];

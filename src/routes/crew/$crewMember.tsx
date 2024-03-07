@@ -51,7 +51,7 @@ function DestinationMoon() {
           <div
             className={cn(
               "flex flex-col items-center justify-center gap-2 py-8",
-              " lg:w-1/2 lg:items-start lg:justify-between lg:gap-4 lg:py-16",
+              " lg:w-1/2 lg:items-start lg:justify-between lg:gap-4 ",
             )}
           >
             <h5
@@ -89,7 +89,7 @@ function DestinationMoon() {
               className={cn(
                 "flex  flex-col gap-2 text-center ",
                 "sm:order-2",
-                "lg:justify-items-center lg:pb-32 lg:text-left",
+                "lg:justify-items-center lg:pb-16 lg:text-left",
               )}
             >
               <h4 className="uppercase text-white/50">
