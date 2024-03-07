@@ -43,8 +43,7 @@ function Index() {
           </button>
           <div
             className={classNames(
-              "absolute left-1/2 top-1/2 z-10 mx-auto h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 opacity-0 transition-all duration-200 peer-hover:opacity-100",
-              "xl:h-96 xl:w-96",
+              "absolute left-1/2 top-1/2 z-10 mx-auto  h-full w-full -translate-x-1/2 -translate-y-1/2 scale-100 rounded-full bg-white/30 opacity-0 transition-all duration-500 peer-hover:scale-125 peer-hover:opacity-100",
             )}
           />
         </div>

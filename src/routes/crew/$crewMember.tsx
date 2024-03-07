@@ -3,6 +3,7 @@ import { crewMembers } from "../../config/content";
 import { cn, convertStringToKebabCase, getCrewMember } from "../../utils/utils";
 import { Circle } from "lucide-react";
 import MaxWidthContainer from "../../components/MaxWidthContainer";
+import PageHeader from "@/components/PageHeader";
 
 export const Route = createFileRoute("/crew/$crewMember")({
   loader: ({ params: { crewMember } }) => {
@@ -24,17 +25,11 @@ function CrewPage() {
       <MaxWidthContainer
         className={cn(
           "h-full gap-8 py-16",
-          "sm:justify-end sm:pb-0   lg:justify-center",
+          "sm:justify-end sm:pb-0   lg:justify-end",
         )}
       >
-        <h5
-          className={cn(
-            "text-subheading-2  uppercase text-white",
-            "sm:self-start sm:py-12",
-          )}
-        >
-          <span className="font-bold text-slate-600">02 </span>Meet your crew
-        </h5>
+        <PageHeader number="02" title="Meet your crew" />
+
         <div
           className={cn(
             "flex w-full flex-col",

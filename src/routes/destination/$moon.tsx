@@ -4,6 +4,7 @@ import { moons } from "../../config/content";
 import { getMoon } from "../../utils/utils";
 import { Link } from "@tanstack/react-router";
 import MaxWidthContainer from "../../components/MaxWidthContainer";
+import PageHeader from "@/components/PageHeader";
 
 export const Route = createFileRoute("/destination/$moon")({
   loader: ({ params: { moon } }) => {
@@ -19,15 +20,12 @@ function DestinationPage() {
       className={classNames(
         "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat text-white ",
         "sm:bg-destination-tablet",
-        " lg:h-screen lg:bg-destination-desktop",
+        "lg:h-screen lg:bg-destination-desktop",
       )}
     >
-      <MaxWidthContainer className=" gap-16  lg:justify-start ">
-        <h5 className="text-center  uppercase text-white sm:self-start sm:py-12 sm:text-left">
-          <span className={classNames("font-bold text-slate-600")}>01 </span>
-          Pick your destination
-        </h5>
-        <div className="flex flex-col items-center justify-center gap-16 lg:flex-row">
+      <MaxWidthContainer className="gap-16  lg:justify-start ">
+        <PageHeader number="01" title="Pick your destination" />
+        <div className="flex flex-col items-center justify-center gap-8 lg:flex-row">
           <div className="h-64 w-64  lg:h-auto lg:w-1/3">
             <img
               src={moon?.imageUrl}

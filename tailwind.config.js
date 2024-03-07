@@ -38,7 +38,7 @@ export default {
         "crew-desktop": "url('../src/assets/crew/background-crew-desktop.jpg')",
 
         "technology-mobile":
-          "url('../src/assets/technology/background-technology-mobile.jpg)",
+          "url('../src/assets/technology/background-technology-mobile.jpg')",
         "technology-tablet":
           "url('../src/assets/technology/background-technology-tablet.jpg')",
         "technology-desktop":
