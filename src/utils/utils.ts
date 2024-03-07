@@ -1,4 +1,4 @@
-import { crewMembers, moons } from "@/config/content";
+import { crewMembers, moons, technologies } from "@/config/content";
 import { notFound } from "@tanstack/react-router";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -20,6 +20,16 @@ export function getCrewMember(crewName: string) {
   if (!crewMember) throw notFound();
 
   return crewMember;
+}
+
+export function getTechnology(techName: string) {
+  const technology = technologies.find(
+    (tech) => convertStringToKebabCase(tech.name) === techName,
+  );
+
+  if (!technology) throw notFound();
+
+  return technology;
 }
 
 export function convertStringToKebabCase(str: string) {

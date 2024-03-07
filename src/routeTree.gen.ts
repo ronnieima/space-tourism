@@ -12,9 +12,10 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as TechnologyIndexImport } from './routes/technology/index'
 import { Route as DestinationIndexImport } from './routes/destination/index'
 import { Route as CrewIndexImport } from './routes/crew/index'
-import { Route as TechnologyTechnologyImport } from './routes/technology/$technology'
+import { Route as TechnologyTechImport } from './routes/technology/$tech'
 import { Route as DestinationMoonImport } from './routes/destination/$moon'
 import { Route as CrewCrewMemberImport } from './routes/crew/$crewMember'
 
@@ -22,6 +23,11 @@ import { Route as CrewCrewMemberImport } from './routes/crew/$crewMember'
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TechnologyIndexRoute = TechnologyIndexImport.update({
+  path: '/technology/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -35,8 +41,8 @@ const CrewIndexRoute = CrewIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const TechnologyTechnologyRoute = TechnologyTechnologyImport.update({
-  path: '/technology/$technology',
+const TechnologyTechRoute = TechnologyTechImport.update({
+  path: '/technology/$tech',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -66,8 +72,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationMoonImport
       parentRoute: typeof rootRoute
     }
-    '/technology/$technology': {
-      preLoaderRoute: typeof TechnologyTechnologyImport
+    '/technology/$tech': {
+      preLoaderRoute: typeof TechnologyTechImport
       parentRoute: typeof rootRoute
     }
     '/crew/': {
@@ -76,6 +82,10 @@ declare module '@tanstack/react-router' {
     }
     '/destination/': {
       preLoaderRoute: typeof DestinationIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/technology/': {
+      preLoaderRoute: typeof TechnologyIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -87,9 +97,10 @@ export const routeTree = rootRoute.addChildren([
   IndexRoute,
   CrewCrewMemberRoute,
   DestinationMoonRoute,
-  TechnologyTechnologyRoute,
+  TechnologyTechRoute,
   CrewIndexRoute,
   DestinationIndexRoute,
+  TechnologyIndexRoute,
 ])
 
 /* prettier-ignore-end */
