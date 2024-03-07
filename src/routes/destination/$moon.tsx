@@ -23,11 +23,11 @@ function DestinationMoon() {
       )}
     >
       <MaxWidthContainer className="flex-col justify-center gap-16 lg:px-0">
-        <h5 className="text-center uppercase text-white md:self-start md:px-8 md:text-left lg:px-0">
+        <h5 className="text-center text-[16px] uppercase text-white md:self-start md:px-8 md:text-left lg:px-0">
           <span className={classNames("font-bold text-slate-600")}>01 </span>
           Pick your destination
         </h5>
-        <div className="flex flex-col gap-16 lg:flex-row">
+        <div className="flex h-full flex-col gap-16 lg:flex-row">
           <div className=" flex w-full flex-col items-center lg:w-1/2 lg:gap-16">
             <div className="h-64 w-64   lg:h-auto lg:w-[445px]">
               <img

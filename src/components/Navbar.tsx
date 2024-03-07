@@ -20,7 +20,7 @@ export default function Navbar() {
         <MobileNav />
 
         <div className="z-50 ml-16 hidden h-[2px] w-full translate-x-6 bg-white/20 lg:flex"></div>
-        <ul className="hidden h-full list-none items-center	gap-16 bg-white/10 md:flex md:pl-16 md:pr-8 lg:pl-24 lg:pr-72 lg:backdrop-blur-lg">
+        <ul className="lg:p hidden h-full list-none	items-center gap-16 bg-white/10 md:flex md:pl-16 md:pr-8 lg:pl-24 lg:backdrop-blur-lg">
           {links.map((link, i) => {
             const isActive = parentRoute === link.href;
             return (
