@@ -22,8 +22,8 @@ function DestinationPage() {
         " lg:h-screen lg:bg-destination-desktop",
       )}
     >
-      <MaxWidthContainer className=" gap-16  lg:justify-start lg:px-0">
-        <h5 className="text-center  uppercase text-white sm:self-start sm:px-8 sm:text-left">
+      <MaxWidthContainer className=" gap-16  lg:justify-start ">
+        <h5 className="text-center  uppercase text-white sm:self-start sm:py-12 sm:text-left">
           <span className={classNames("font-bold text-slate-600")}>01 </span>
           Pick your destination
         </h5>

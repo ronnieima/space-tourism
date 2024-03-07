@@ -8,61 +8,60 @@ export const Route = createFileRoute("/crew/$crewMember")({
   loader: ({ params: { crewMember } }) => {
     return getCrewMember(crewMember);
   },
-  component: DestinationMoon,
+  component: CrewPage,
 });
 
-function DestinationMoon() {
+function CrewPage() {
   const crewMember = Route.useLoaderData();
   return (
     <main
       className={cn(
         "h-screen bg-crew-mobile bg-cover bg-center text-white",
         "sm:bg-crew-tablet",
-        "lg:bg-crew-desktop",
+        " lg:bg-crew-desktop",
       )}
     >
       <MaxWidthContainer
         className={cn(
           "h-full gap-8 py-16",
-          "sm:justify-end sm:pb-0 sm:pt-16 lg:max-h-full lg:max-w-[100rem] lg:justify-center",
+          "sm:justify-end sm:pb-0   lg:justify-center",
         )}
       >
+        <h5
+          className={cn(
+            "text-subheading-2  uppercase text-white",
+            "sm:self-start sm:py-12",
+          )}
+        >
+          <span className="font-bold text-slate-600">02 </span>Meet your crew
+        </h5>
         <div
           className={cn(
             "flex w-full flex-col",
             "sm:justify-end",
-            " lg:h-full lg:w-full lg:flex-row lg:justify-start lg:gap-8 lg:pt-16",
+            " lg:h-full lg:w-full lg:flex-row lg:justify-start lg:gap-8",
           )}
         >
           {/* IMAGE */}
           <div
             className={cn(
-              "flex  h-[24rem]  w-auto flex-col items-end gap-16 self-center border-b-2 border-white/10",
+              "flex h-[20rem] w-auto flex-col items-end gap-16 self-center border-b-2 border-white/10",
               "sm:order-last sm:h-[32rem]  sm:justify-end sm:border-b-0",
-              "lg:h-full lg:max-w-[50%] lg:justify-end",
+              "lg:h-auto lg:w-1/3 lg:self-end",
             )}
           >
             <img
               src={crewMember?.imageUrl}
               className=" h-full w-full "
-              alt={`A picture of the ${crewMember?.name.toLowerCase()}.`}
-            ></img>
+              alt={`A picture of ${crewMember?.name.toLowerCase()}.`}
+            />
           </div>
           <div
             className={cn(
-              "flex flex-col items-center justify-center gap-2 py-8",
-              " lg:w-1/2 lg:items-start lg:justify-between lg:gap-4 ",
+              "flex flex-col items-center justify-center gap-2",
+              " lg:w-1/2 lg:items-start lg:justify-end lg:gap-32 lg:pb-16 ",
             )}
           >
-            <h5
-              className={cn(
-                "text-subheading-2 order-first uppercase text-white",
-                "sm:self-start sm:py-12",
-              )}
-            >
-              <span className="font-bold text-slate-600">02 </span>Meet your
-              crew
-            </h5>
             <ul
               className={cn(
                 "flex list-none gap-4 py-2 uppercase",
@@ -77,10 +76,20 @@ function DestinationMoon() {
                       crewMember: convertStringToKebabCase(crew.name),
                     }}
                     activeProps={{
-                      className: "border-b-4 border-white text-white",
+                      className: "",
                     }}
                   >
-                    <Circle className="h-4 w-4 fill-white/20 text-white/20 hover:fill-white/50 hover:text-white/50" />
+                    <Circle
+                      className={cn(
+                        "h-4 w-4 fill-white/20 text-white/20",
+                        "avtive:ring-primary active:ring",
+                        "hover:fill-white/50 hover:text-white/50",
+                        {
+                          "rounded-full bg-white text-white":
+                            crew.name === crewMember.name,
+                        },
+                      )}
+                    />
                   </Link>
                 </li>
               ))}
@@ -89,7 +98,7 @@ function DestinationMoon() {
               className={cn(
                 "flex  flex-col gap-2 text-center ",
                 "sm:order-2",
-                "lg:justify-items-center lg:pb-16 lg:text-left",
+                "lg:justify-items-center  lg:text-left",
               )}
             >
               <h4 className="uppercase text-white/50">
