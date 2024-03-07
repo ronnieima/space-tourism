@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks";
 export default function MobileNav() {
   return (
     <Sheet>
-      <SheetTrigger className="md:hidden">
+      <SheetTrigger className="sm:hidden">
         <Menu size={32} />
       </SheetTrigger>
       <SheetContent className="bg-transparent pr-0 backdrop-blur-2xl">

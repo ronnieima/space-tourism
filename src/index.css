@@ -74,13 +74,13 @@
     @apply font-bellefair text-[100px] text-white;
   }
   h3 {
-    @apply font-bellefair text-[56px] text-white;
+    @apply font-bellefair text-[24px] text-white sm:text-[40px] lg:text-[56px];
   }
   h4 {
-    @apply font-bellefair text-[32px] text-white;
+    @apply font-bellefair text-[16px] text-white sm:text-[24px] lg:text-[32px];
   }
   h5 {
-    @apply font-barlow_condensed text-[28px] tracking-[4.75px] text-primary;
+    @apply font-barlow_condensed text-[16px] tracking-[4.75px] text-primary sm:text-[20px] lg:text-[28px];
   }
   p {
     @apply font-barlow_condensed text-[18px];

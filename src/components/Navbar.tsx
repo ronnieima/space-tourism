@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <nav className="absolute z-50 h-16 w-full text-white lg:top-8 lg:h-24">
-      <div className="flex h-full items-center justify-between px-8 md:px-0 md:pl-8">
+      <div className="flex h-full items-center justify-between px-8 sm:px-0 sm:pl-8">
         <img
           src="/src/assets/shared/logo.svg"
           className="w-[40px] hover:cursor-pointer"
@@ -20,7 +20,7 @@ export default function Navbar() {
         <MobileNav />
 
         <div className="z-50 ml-16 hidden h-[2px] w-full translate-x-6 bg-white/20 lg:flex"></div>
-        <ul className="lg:p hidden h-full list-none	items-center gap-16 bg-white/10 md:flex md:pl-16 md:pr-8 lg:pl-24 lg:backdrop-blur-lg">
+        <ul className="hidden h-full list-none	items-center gap-16 bg-white/10 sm:flex sm:pl-16 sm:pr-8 lg:pl-24 lg:backdrop-blur-lg">
           {links.map((link, i) => {
             const isActive = parentRoute === link.href;
             return (
