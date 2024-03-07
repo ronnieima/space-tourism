@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as DestinationIndexImport } from './routes/destination/index'
 import { Route as CrewIndexImport } from './routes/crew/index'
+import { Route as TechnologyTechnologyImport } from './routes/technology/$technology'
 import { Route as DestinationMoonImport } from './routes/destination/$moon'
 import { Route as CrewCrewMemberImport } from './routes/crew/$crewMember'
 
@@ -31,6 +32,11 @@ const DestinationIndexRoute = DestinationIndexImport.update({
 
 const CrewIndexRoute = CrewIndexImport.update({
   path: '/crew/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TechnologyTechnologyRoute = TechnologyTechnologyImport.update({
+  path: '/technology/$technology',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +66,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationMoonImport
       parentRoute: typeof rootRoute
     }
+    '/technology/$technology': {
+      preLoaderRoute: typeof TechnologyTechnologyImport
+      parentRoute: typeof rootRoute
+    }
     '/crew/': {
       preLoaderRoute: typeof CrewIndexImport
       parentRoute: typeof rootRoute
@@ -77,6 +87,7 @@ export const routeTree = rootRoute.addChildren([
   IndexRoute,
   CrewCrewMemberRoute,
   DestinationMoonRoute,
+  TechnologyTechnologyRoute,
   CrewIndexRoute,
   DestinationIndexRoute,
 ])
