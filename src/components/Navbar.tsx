@@ -10,7 +10,7 @@ export default function Navbar() {
   const parentRoute = `/${path.slice(1).split("/")[0]}` || "/";
 
   return (
-    <nav className="absolute z-50 h-16 w-full text-white lg:top-8 lg:h-24">
+    <nav className="absolute z-50 h-16 w-full text-white lg:top-8 lg:h-24 ">
       <div className="flex h-full items-center justify-between px-8 sm:px-0 sm:pl-8">
         <img
           src="/src/assets/shared/logo.svg"
@@ -20,7 +20,7 @@ export default function Navbar() {
         <MobileNav />
 
         <div className="z-50 ml-16 hidden h-[2px] w-full translate-x-6 bg-white/20 lg:flex"></div>
-        <ul className="hidden h-full list-none	items-center gap-16 bg-white/10 sm:flex sm:pl-16 sm:pr-8 lg:pl-24 lg:backdrop-blur-lg">
+        <ul className="hidden h-full list-none	items-center gap-16 bg-white/10 sm:flex sm:pl-16 sm:pr-8 lg:pl-24 lg:pr-40 lg:backdrop-blur-lg">
           {links.map((link, i) => {
             const isActive = parentRoute === link.href;
             return (

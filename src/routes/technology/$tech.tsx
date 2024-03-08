@@ -14,7 +14,7 @@ function TechnologyPage() {
   return (
     <main
       className={cn(
-        "bg-technology-mobile h-screen bg-cover bg-center bg-no-repeat text-white",
+        "h-screen bg-technology-mobile bg-cover bg-center bg-no-repeat text-white",
         "sm:bg-technology-tablet",
         "lg:bg-technology-desktop",
       )}

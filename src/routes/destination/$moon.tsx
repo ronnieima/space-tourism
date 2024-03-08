@@ -38,21 +38,25 @@ function DestinationPage() {
             <ul className={classNames("flex gap-8")}>
               {moons.map((moon) => {
                 return (
-                  <li key={moon.name}>
+                  <li
+                    key={moon.name}
+                    className="flex h-16 flex-col justify-between"
+                  >
                     <Link
                       to={"/destination/$moon"}
                       params={{ moon: moon.name.toLowerCase() }}
                       key={moon.name}
                       activeProps={{
-                        className: "border-b-4 border-white text-white",
+                        className: "border-b-4 border-white text-white ",
                       }}
                       className={classNames(
-                        "text-nav font-barlow_condensed text-primary",
-                        "hover:border-b-4 hover:border-white/50",
+                        "text-nav peer font-barlow_condensed text-primary ",
+                        "offs underline-offset-8 hover:border-b-4 hover:border-white/50",
                       )}
                     >
                       {moon.name.toUpperCase()}
                     </Link>
+                    <div className="h-1 w-full bg-white"></div>
                   </li>
                 );
               })}
