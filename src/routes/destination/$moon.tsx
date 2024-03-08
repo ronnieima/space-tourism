@@ -20,7 +20,7 @@ function DestinationPage() {
       className={classNames(
         "h-screen bg-destination-mobile bg-cover bg-center bg-no-repeat text-white ",
         "sm:bg-destination-tablet",
-        " lg:bg-destination-desktop",
+        "lg:h-full lg:bg-destination-desktop",
       )}
     >
       <MaxWidthContainer className="gap-16  lg:justify-start ">
