@@ -17,7 +17,7 @@ function Index() {
       )}
     >
       <MaxWidthContainer
-        className={cn("h-screen flex-row items-end justify-between")}
+        className={cn("h-screen flex-row items-end justify-between p-16")}
       >
         <header className="flex h-full w-full flex-col items-center justify-center px-4  text-center lg:w-[32rem] lg:items-start lg:text-left">
           <h5 className="text-sm uppercase ">So, you want to travel to</h5>

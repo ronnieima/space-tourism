@@ -17,9 +17,9 @@ function CrewPage() {
   return (
     <main
       className={cn(
-        "h-full bg-crew-mobile bg-cover bg-center text-white",
+        "h-screen bg-crew-mobile bg-cover bg-center text-white",
         "sm:bg-crew-tablet",
-        " lg:h-screen lg:bg-crew-desktop",
+        "lg:bg-crew-desktop",
       )}
     >
       <MaxWidthContainer
