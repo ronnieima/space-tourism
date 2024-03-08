@@ -17,7 +17,7 @@ function CrewPage() {
   return (
     <main
       className={cn(
-        "h-screen bg-crew-mobile bg-cover bg-center text-white",
+        " bg-crew-mobile bg-cover bg-center text-white",
         "sm:bg-crew-tablet",
         " lg:bg-crew-desktop",
       )}
