@@ -1,4 +1,19 @@
 import moon from "/src/assets/destination/image-moon.webp";
+import mars from "/src/assets/destination/image-mars.webp";
+import europa from "/src/assets/destination/image-europa.webp";
+import titan from "/src/assets/destination/image-titan.webp";
+
+import douglas from "/src/assets/crew/image-douglas-hurley.webp";
+import mark from "/src/assets/crew/image-mark-shuttleworth.webp";
+import victor from "/src/assets/crew/image-victor-glover.webp";
+import anousheh from "/src/assets/crew/image-anousheh-ansari.webp";
+
+import launchVehicleLandscape from "/src/assets/technology/image-launch-vehicle-landscape.jpg";
+import launchVehiclePortrait from "/src/assets/technology/image-launch-vehicle-portrait.jpg";
+import spaceportLandscape from "/src/assets/technology/image-spaceport-landscape.jpg";
+import spaceportPortrait from "/src/assets/technology/image-spaceport-portrait.jpg";
+import spaceCapsuleLandscape from "/src/assets/technology/image-space-capsule-landscape.jpg";
+import spaceCapsulePortrait from "/src/assets/technology/image-space-capsule-portrait.jpg";
 
 export const links = [
   { label: "home", href: "/" },
@@ -22,7 +37,7 @@ export const moons = [
       "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
     averageDistance: "225 MIL. km",
     estimatedTravelTime: "9 months",
-    imageUrl: "/src/assets/destination/image-mars.webp",
+    imageUrl: mars,
   },
   {
     name: "EUROPA",
@@ -30,7 +45,7 @@ export const moons = [
       "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
     averageDistance: "628 MIL. km",
     estimatedTravelTime: "3 years",
-    imageUrl: "/src/assets/destination/image-europa.webp",
+    imageUrl: europa,
   },
   {
     name: "TITAN",
@@ -38,7 +53,7 @@ export const moons = [
       "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
     averageDistance: "1.6 BIL. km",
     estimatedTravelTime: "7 years",
-    imageUrl: "/src/assets/destination/image-titan.webp",
+    imageUrl: titan,
   },
 ];
 
@@ -47,25 +62,25 @@ export const crewMembers = [
     jobTitle: "Commander",
     name: "Douglas Hurley",
     bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
-    imageUrl: "/src/assets/crew/image-douglas-hurley.webp",
+    imageUrl: douglas,
   },
   {
     jobTitle: "Mission Specialist",
     name: "MARK SHUTTLEWORTH",
     bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
-    imageUrl: "/src/assets/crew/image-mark-shuttleworth.webp",
+    imageUrl: mark,
   },
   {
     jobTitle: "PILOT",
     name: "Victor Glover",
     bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
-    imageUrl: "/src/assets/crew/image-victor-glover.webp",
+    imageUrl: victor,
   },
   {
     jobTitle: "Flight Engineer",
     name: "Anousheh Ansari",
     bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
-    imageUrl: "/src/assets/crew/image-anousheh-ansari.webp",
+    imageUrl: anousheh,
   },
 ];
 
@@ -75,8 +90,8 @@ export const technologies = [
     description:
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
     imageUrl: {
-      landscape: "/src/assets/technology/image-launch-vehicle-landscape.jpg",
-      portrait: "/src/assets/technology/image-launch-vehicle-portrait.jpg",
+      landscape: launchVehicleLandscape,
+      portrait: launchVehiclePortrait,
     },
   },
   {
@@ -84,8 +99,8 @@ export const technologies = [
     description:
       "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
     imageUrl: {
-      landscape: "/src/assets/technology/image-spaceport-landscape.jpg",
-      portrait: "/src/assets/technology/image-spaceport-portrait.jpg",
+      landscape: spaceportLandscape,
+      portrait: spaceportPortrait,
     },
   },
   {
@@ -93,8 +108,8 @@ export const technologies = [
     description:
       "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
     imageUrl: {
-      landscape: "/src/assets/technology/image-space-capsule-landscape.jpg",
-      portrait: "/src/assets/technology/image-space-capsule-portrait.jpg",
+      landscape: spaceCapsuleLandscape,
+      portrait: spaceCapsulePortrait,
     },
   },
 ];
