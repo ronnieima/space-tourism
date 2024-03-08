@@ -11,13 +11,15 @@ function Index() {
   return (
     <main
       className={cn(
-        "-z-50 h-full bg-home-mobile bg-cover bg-center bg-no-repeat py-12 ",
+        "h-full bg-home-mobile bg-cover bg-center bg-no-repeat ",
         "md:bg-home-tablet",
         "lg:bg-home-desktop",
       )}
     >
-      <MaxWidthContainer className={cn()}>
-        <header className="flex w-full flex-col items-center justify-center px-4 text-center lg:w-[32rem] lg:items-start lg:text-left">
+      <MaxWidthContainer
+        className={cn("h-screen flex-row items-end justify-between")}
+      >
+        <header className="flex h-full w-full flex-col items-center justify-center px-4  text-center lg:w-[32rem] lg:items-start lg:text-left">
           <h5 className="text-sm uppercase ">So, you want to travel to</h5>
           <h1 className="text-[80px] md:text-[150px]">SPACE</h1>
           <p className="w-full px-4 leading-8 text-[#D0D6F9] sm:px-24 md:px-32 lg:p-0">

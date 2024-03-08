@@ -14,9 +14,9 @@ function TechnologyPage() {
   return (
     <main
       className={cn(
-        "h-full overflow-y-hidden  bg-technology-mobile bg-cover bg-center bg-no-repeat text-white",
+        "h-full   bg-technology-mobile bg-cover bg-center bg-no-repeat text-white",
         "sm:bg-technology-tablet",
-        " lg:bg-technology-desktop",
+        " lg:h-screen lg:bg-technology-desktop",
       )}
     >
       <MaxWidthContainer

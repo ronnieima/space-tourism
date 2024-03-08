@@ -18,15 +18,15 @@ function DestinationPage() {
   return (
     <main
       className={classNames(
-        "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat py-12 text-white",
+        "h-full bg-destination-mobile bg-cover bg-center bg-no-repeat text-white",
         "sm:bg-destination-tablet",
-        "lg:bg-destination-desktop",
+        "lg:h-screen lg:bg-destination-desktop",
       )}
     >
       <MaxWidthContainer className="gap-8 lg:justify-start ">
         <PageHeader number="01" title="Pick your destination" />
-        <div className="flex flex-col items-center justify-center gap-16 lg:flex-row lg:py-16">
-          <div className="h-64 w-64  lg:h-auto lg:w-[32rem]">
+        <div className="flex flex-col items-center justify-center gap-16 lg:flex-row ">
+          <div className="h-64 w-64  lg:h-auto lg:w-[16rem]">
             <img
               src={selectedMoon?.imageUrl}
               className="h-full w-full "

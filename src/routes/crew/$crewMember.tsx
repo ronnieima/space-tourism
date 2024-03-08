@@ -19,7 +19,7 @@ function CrewPage() {
       className={cn(
         "h-full bg-crew-mobile bg-cover bg-center text-white",
         "sm:bg-crew-tablet",
-        " lg:bg-crew-desktop",
+        " lg:h-screen lg:bg-crew-desktop",
       )}
     >
       <MaxWidthContainer
