@@ -2,6 +2,7 @@ import { useRouterState, Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import MobileNav from "./MobileNav";
 import { links } from "@/config/content";
+import logo from "/src/assets/shared/logo.svg";
 
 export default function Navbar() {
   const { location } = useRouterState();
@@ -13,7 +14,7 @@ export default function Navbar() {
     <nav className="absolute z-50 h-16 w-full text-white lg:top-8 lg:h-24 ">
       <div className="flex h-full items-center justify-between px-8 sm:px-0 sm:pl-8">
         <img
-          src="/src/assets/shared/logo.svg"
+          src={logo}
           className="w-[40px] hover:cursor-pointer"
           onClick={() => navigate({ to: "/" })}
         />
