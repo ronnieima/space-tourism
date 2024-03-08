@@ -14,7 +14,7 @@ function TechnologyPage() {
   return (
     <main
       className={cn(
-        "h-screen overflow-y-hidden  bg-technology-mobile bg-cover bg-center bg-no-repeat text-white",
+        "h-full overflow-y-hidden  bg-technology-mobile bg-cover bg-center bg-no-repeat text-white",
         "sm:bg-technology-tablet",
         " lg:bg-technology-desktop",
       )}
@@ -23,7 +23,7 @@ function TechnologyPage() {
         className={cn(
           "justify-center px-0",
           "md:px-0 ",
-          "  lg:max-w-none lg:items-center lg:justify-start lg:gap-8 lg:px-0 lg:pl-16",
+          "  lg:max-w-none lg:items-center lg:justify-center lg:gap-8 lg:px-0 lg:pl-16",
         )}
       >
         <PageHeader number="03" title="Space Launch 101" />

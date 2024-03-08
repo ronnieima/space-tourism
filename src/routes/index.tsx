@@ -1,5 +1,6 @@
+import MaxWidthContainer from "@/components/MaxWidthContainer";
+import { cn } from "@/utils/utils";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import classNames from "classnames";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -9,18 +10,13 @@ function Index() {
   const navigate = useNavigate();
   return (
     <main
-      className={classNames(
-        "-z-50 h-screen bg-home-mobile bg-cover bg-center bg-no-repeat ",
+      className={cn(
+        "-z-50 h-full bg-home-mobile bg-cover bg-center bg-no-repeat py-12 ",
         "md:bg-home-tablet",
         "lg:bg-home-desktop",
       )}
     >
-      <section
-        className={classNames(
-          "mx-auto flex h-full  flex-col items-center justify-center gap-12 py-16  font-bellefair",
-          "lg:flex-row lg:items-end lg:justify-between lg:px-32 lg:pb-32 ",
-        )}
-      >
+      <MaxWidthContainer className={cn()}>
         <header className="flex w-full flex-col items-center justify-center px-4 text-center lg:w-[32rem] lg:items-start lg:text-left">
           <h5 className="text-sm uppercase ">So, you want to travel to</h5>
           <h1 className="text-[80px] md:text-[150px]">SPACE</h1>
@@ -34,7 +30,7 @@ function Index() {
         <div className="relative">
           <button
             onClick={() => navigate({ to: "/destination" })}
-            className={classNames(
+            className={cn(
               "peer relative z-20 h-40 w-40 rounded-full bg-white text-[32px] text-lg uppercase text-black",
               "sm:h-64 sm:w-64 sm:text-4xl",
             )}
@@ -42,12 +38,12 @@ function Index() {
             Explore
           </button>
           <div
-            className={classNames(
+            className={cn(
               "absolute left-1/2 top-1/2 z-10 mx-auto  h-full w-full -translate-x-1/2 -translate-y-1/2 scale-100 rounded-full bg-white/30 opacity-0 transition-all duration-500 peer-hover:scale-125 peer-hover:opacity-100",
             )}
           />
         </div>
-      </section>
+      </MaxWidthContainer>
     </main>
   );
 }

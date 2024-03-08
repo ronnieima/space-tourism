@@ -17,37 +17,34 @@ function CrewPage() {
   return (
     <main
       className={cn(
-        " bg-crew-mobile bg-cover bg-center text-white",
+        "h-full bg-crew-mobile bg-cover bg-center text-white",
         "sm:bg-crew-tablet",
         " lg:bg-crew-desktop",
       )}
     >
       <MaxWidthContainer
-        className={cn(
-          "h-full gap-8 py-16",
-          "sm:justify-end sm:pb-0   lg:justify-end",
-        )}
+        className={cn("gap-8 py-16", "sm:justify-end sm:pb-0   lg:justify-end")}
       >
         <PageHeader number="02" title="Meet your crew" />
 
         <div
           className={cn(
-            "flex w-full flex-col",
+            "flex flex-col justify-center",
             "sm:justify-end",
-            " lg:h-full lg:w-full lg:flex-row lg:justify-start lg:gap-8",
+            "lg:flex-row lg:justify-start lg:gap-8",
           )}
         >
           {/* IMAGE */}
           <div
             className={cn(
-              "flex h-[20rem] w-auto flex-col items-end gap-16 self-center border-b-2 border-white/10",
+              "h-[20rem] w-full gap-16 self-center border-b-2 border-white/10",
               "sm:order-last sm:h-[32rem]  sm:justify-end sm:border-b-0",
               "lg:h-auto lg:w-1/3 lg:self-end",
             )}
           >
             <img
               src={crewMember?.imageUrl}
-              className=" h-full w-full "
+              className=" mx-auto h-full w-auto "
               alt={`A picture of ${crewMember?.name.toLowerCase()}.`}
             />
           </div>
