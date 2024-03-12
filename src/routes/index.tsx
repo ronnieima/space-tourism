@@ -17,7 +17,9 @@ function Index() {
       )}
     >
       <MaxWidthContainer
-        className={cn("h-screen flex-row items-end justify-between p-16")}
+        className={cn(
+          "h-screen flex-col items-center justify-between gap-8 p-16 lg:flex-row lg:items-end",
+        )}
       >
         <header className="flex h-full w-full flex-col items-center justify-center px-4  text-center lg:w-[32rem] lg:items-start lg:text-left">
           <h5 className="text-sm uppercase ">So, you want to travel to</h5>
@@ -33,7 +35,7 @@ function Index() {
           <button
             onClick={() => navigate({ to: "/destination" })}
             className={cn(
-              "peer relative z-20 h-40 w-40 rounded-full bg-white text-[32px] text-lg uppercase text-black",
+              "peer relative z-20 h-40 w-40 rounded-full bg-white font-bellefair text-[32px] text-lg uppercase text-black",
               "sm:h-64 sm:w-64 sm:text-4xl",
             )}
           >
